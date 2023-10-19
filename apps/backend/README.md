@@ -2,20 +2,22 @@
 Backend Web Application - Bot API + Bot Service
 </h1>
 
-This bot has been created using [Bot Framework](https://dev.botframework.com).
+봇은 [Bot Framework](https://dev.botframework.com)를 사용하여 생성하였습니다.
 
-Services and tools used:
+사용되는 서비스 및 도구:
 
 - Azure App Service (Web App) - Chatbot API Hosting
 - Azure Bot Service - A service for managing communication through various channels
 
-## Deploy Bot To Azure Web App
+## Azure Web App에 봇 배포
 
-Below are the steps to run the Bot API as an Azure Wep App, connected with the Azure Bot Service that will expose the bot to multiple channels including: Web Chat, MS Teams, Twilio, SMS, Email, Slack, etc..
+아래의 가이드는 웹 채팅, MS Teams, Twilio, SMS, 이메일, 슬랙 등 여러 채널에 봇을 노출시키는 Azure Bot 서비스와 연결된 Bot API를 Azure Wep App으로 실행하는 단계입니다..
 
-1. In Azure Portal: In Azure Active Directory->App Registrations, Create an Multi-Tenant App Registration (Service Principal), create a Secret (and take note of the value)
+1. Azure Portal에서: Azure Active Directory -> App Registrations에서 Multi-Tenant App Registration (Service Principal) 생성
 
-2. Deploy the Bot Web App and the Bot Service by clicking the Button below and type the App Registration ID and Secret Value that you got in Step 1 along with all the other ENV variables you used in the Notebooks
+2. Multi-Tenant App Registration에서, Secret 생성 (단, 값을 따로 저장해야 한다)
+
+3. Deploy the Bot Web App and the Bot Service by clicking the Button below and type the App Registration ID and Secret Value that you got in Step 1 along with all the other ENV variables you used in the Notebooks 
 
 [![Deploy To Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpablomarin%2FGPT-Azure-Search-Engine%2Fmain%2Fapps%2Fbackend%2Fazuredeploy-backend.json)
 

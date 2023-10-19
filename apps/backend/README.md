@@ -17,15 +17,15 @@ Backend Web Application - Bot API + Bot Service
 
 2. Multi-Tenant App Registration에서, Secret 생성 (단, 값을 따로 저장해야 한다)
 
-3. Deploy the Bot Web App and the Bot Service by clicking the Button below and type the App Registration ID and Secret Value that you got in Step 1 along with all the other ENV variables you used in the Notebooks 
+3. 아래 버튼을 클릭하여 Bot Web App과 Bot Service를 배포하고 배포단계에서 얻은 앱 등록 ID와 비밀 값을 노트북에서 사용한 다른 모든 ENV 변수와 함께 입력합니다. 
 
 [![Deploy To Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fpablomarin%2FGPT-Azure-Search-Engine%2Fmain%2Fapps%2Fbackend%2Fazuredeploy-backend.json)
 
-3. Zip the code of the bot by executing the following command in the terminal (**you have to be inside the app/backend/ folder**):
+4. 터미널에서 다음 명령을 실행하여 봇의 코드 압축합니다. 단 압축된 코드는 appㄴ/backend 안에 있어야 합니다.
 ```bash
 zip -j backend.zip ../../common/* ./*
 ```
-4. Using the Azure CLI deploy the bot code to the Azure App Service created on Step 2
+5. Azure CLI를 사용하여 2번에서 작성된 Azure App Service에 봇 코드를 배포합니다
 ```bash
 az login -i
 az webapp deployment source config-zip --resource-group "<resource-group-name>" --name "<name-of-backend-app-service>" --src "backend.zip"
@@ -33,11 +33,11 @@ az webapp deployment source config-zip --resource-group "<resource-group-name>" 
 **Note**: If you get this error: `An error occured during deployment. Status Code: 401`. **Cause**: Some FDPO Azure Subscriptions disable Azure Web Apps Basic Authentication every minute (don't know why). **Solution**:  before running the above `az webapp deployment` command, make sure that your backend azure web app has Basic Authentication ON. In the Azure Portal, you can find this settting in: `Configuration->General Settings`.
 Don't worry if after running the command it says retrying many times, the zip files already uploaded and is building.
 
-5. In the Azure Portal: **Wait around 5 minutes** and test your bot by going to your Azure Bot Service created in Step 2 and clicking on: **Test in Web Chat**
+6. Azure Portal에서: **5분 정도 기다리시고** 2단계에서 만든 Azure Bot Service로 이동하여 다음을 클릭하여 Bot을 테스트합니다: **Web Chat에서 테스트합니다**
 
-6. In the Azure Portal: In your Bot Service , add multiple channels (Including Teams) by clicking in **Channels**
+7. In the Azure Portal: In your Bot Service , add multiple channels (Including Teams) by clicking in **Channels**
 
-7. Go to apps/frontend folder and follow the steps in README.md to deploy a Frontend application that uses the bot.
+8. Go to apps/frontend folder and follow the steps in README.md to deploy a Frontend application that uses the bot.
 
 ## Reference documentation
 

@@ -35,9 +35,9 @@ Don't worry if after running the command it says retrying many times, the zip fi
 
 6. Azure Portal에서: **5분 정도 기다리시고** 2단계에서 만든 Azure Bot Service로 이동하여 다음을 클릭하여 Bot을 테스트합니다: **Web Chat에서 테스트합니다**
 
-7. In the Azure Portal: In your Bot Service , add multiple channels (Including Teams) by clicking in **Channels**
+7. Azure Portal의 Bot Service에서 **Channels**를 클릭하여 multiple channels를 추가합니다. 
 
-8. Go to apps/frontend folder and follow the steps in README.md to deploy a Frontend application that uses the bot.
+8. apps/frontend 폴더로 이동하여 README.md 가이드에 따라 Frontend 애플리케이션을 배포합니다. 
 
 ## Reference documentation
 

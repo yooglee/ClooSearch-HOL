@@ -111,3 +111,20 @@ pip install -r ./common/requirements.txt
 8. 4단계에서 생성된 Azure Infrastructure 서비스들을 사용하여 'credentials.env'파일을 사용자 자신의 값으로 편집합니다.
 9. **노트북을 순서대로 실행합니다**. 노트북은 서로 상호작용을 하기 때문에 꼭 순서대로 실행을 해주세요. 
 
+## **목차**
+1. AOAI 소개
+
+2. 사전 준비
+- Azure 서비스 배포
+- Conda 환경 생성 및 배포
+
+3. Smart Search Process
+- 01 Cognitive Search에 데이터 적재 및 검색 엔진로드
+- 02 Cognitive Search에 CSV 파일 적재 및 검색 엔진로드
+- 03 검색엔진을 사용하여 쿼리는 통해 데이터 검색
+- 04 복잡한 파일의 처리 방법
+- 05 대화 기억력 탑제
+- 06 표형태의 데이터 검색 및 처리 방법
+- 07 sql db에 데이터 적재 및 검색 엔진로드
+- 08 Bing 검색 탑제
+- 09 smart agent를 사용한 최적의 답변 검색

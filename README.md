@@ -112,14 +112,14 @@ pip install -r ./common/requirements.txt
 9. **노트북을 순서대로 실행합니다**. 노트북은 서로 상호작용을 하기 때문에 꼭 순서대로 실행을 해주세요. 
 
 ## **목차**
-1. AOAI 소개
+1. **AOAI 소개**
 
-2. 사전 준비
+2. **사전 준비**
   - 사전 필요 Azure 서비스 배포
   - Conda 환경 생성 및 배포
   - 필수 패키지 설치
 
-3. Smart Search Process
+3. **Smart Search Process**
 - 01-Load-Data-ACogSearch
    - Cognitive Search에 데이터 적재 및 검색 엔진을 로드합니다.
    - Azure blob Storage의 데이터를 로드 하고 Skillset을 생성합니다.

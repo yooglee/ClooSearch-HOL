@@ -115,16 +115,41 @@ pip install -r ./common/requirements.txt
 1. AOAI 소개
 
 2. 사전 준비
-- Azure 서비스 배포
-- Conda 환경 생성 및 배포
+  - 사전 필요 Azure 서비스 배포
+  - Conda 환경 생성 및 배포
+  - 필수 패키지 설치
 
 3. Smart Search Process
-- 01 Cognitive Search에 데이터 적재 및 검색 엔진로드
-- 02 Cognitive Search에 CSV 파일 적재 및 검색 엔진로드
-- 03 검색엔진을 사용하여 쿼리는 통해 데이터 검색
-- 04 복잡한 파일의 처리 방법
-- 05 대화 기억력 탑제
-- 06 표형태의 데이터 검색 및 처리 방법
-- 07 sql db에 데이터 적재 및 검색 엔진로드
-- 08 Bing 검색 탑제
-- 09 smart agent를 사용한 최적의 답변 검색
+- 01-Load-Data-ACogSearch
+   - Cognitive Search에 데이터 적재 및 검색 엔진을 로드합니다.
+   - Azure blob Storage의 데이터를 로드 하고 Skillset을 생성합니다.
+   - 이 단계에서는 뉴스 출판물이 업로드 되어 있는 Azure Blob Storage Container를 사용할 예정입니다. (DOCX/DOC, XSLX/XLS, PPTX/PPT, MSG, HTML, XML, ZIP 및 일반 텍스트 파일 등 다양한 파일 형식을 지원)
+   - Cognitive Search에서 Skillset, Search Index, Indexer를 생성합니다.
+- 02-LoadCSVOneToMany-ACogSearch
+   - Cognitive Search에 CSV 파일 적재 및 검색 엔진을 로드합니다.
+   - CSV파일을 인덱싱하는 단계를 생성하고, 실행하여 각 행을 Azure Cognivie Search에서 검색 가능하게 만듭니다.
+   - Text Splitter, Language, Detection - Skillset을 생성합니다.
+   - 벡터 기반 인덱스를 생성합니다.
+- 03-Quering-AOpenAI
+   - 검색엔진을 사용하여 쿼리는 통해 데이터 검색합니다.
+   - 이 단계에서의 Multi-Index 데모는 회사가 서로 다른 유형의 문서와 완전히 다른 주제를 로드하고 검색 엔진이 가장 연관성이 높은 결과로 응답해야 하는 시나리오를 따릅니다.
+- 04-Complex-Docs
+   - 크고 복잡한 파일의 처리 방법에 대해 알아보겠습니다.
+   - PyPDF Library와 Azure AI Document를 비교합니다.
+   - 벡터 기반 인덱스에 문서의 청크와 벡터를 업로드합니다.
+- 05-Adding-memory
+   - 메모리를 포함한 LLM을 효과적으로 처리할 수 있는 방법에 대해 알아봅니다.
+   - GPT 모델에 Memory를 추가하여 GPT Smart Search 엔진에 적용합니다.
+   - CosmosDB를 영구적인 Memory로 사용합니다.
+- 06-TabularDataQA
+   - 표 형태의 데이터 검색 및 처리 방법에 대해 실습합니다.
+   - LLM 모델을 사용하여 표 형태의 데이터를 이해하고 질문에 대답하기 위해서 CSV 파일 혹은 SQL Database에서 문맥을 얻어야 합니다.
+   - 이러한 소스를 다루는 방법을 이해하고, 데이터를 분석하여 답을 도출합니다.
+- 07-SQLDB_QA
+   - GPT-4와 같이 뛰어난 LLM이 어떻게 인간의 질문을 이해하고, 이를 SQL 쿼리로 변환하여 답을 얻는지 확인합니다.
+- 08-BingChatClone
+   - Langchain과 Azure Bing Search API 서비스를 활용하여 웹 검색 기능으로 GPT Smart Search Engine을 부스팅하는 방법에 대해 실습합니다.
+   - Bing Search API를 사용하여 Web Search Agent를 생성하는 과정을 확인합니다.
+   - Callback Handle와 사용법 및 봇 애플리케이션에서의 중요성을 확인합니다.
+- 09-Smart_Agent
+   - 지금까지 진행한 노트북들을 GPT Smart Seach Engine 챗봇에 결합합니다.
